@@ -16,6 +16,8 @@ public class CameraFollow : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+
+    
     {
         Vector3 displacementToSquare = transform.position - square.transform.position; // Calculate the camera's relative position to the square
         displacementToSquare.z = 0;// Make sure the camera only move in the x-y plane
