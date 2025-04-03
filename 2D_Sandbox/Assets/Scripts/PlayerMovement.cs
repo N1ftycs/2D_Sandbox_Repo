@@ -2,6 +2,8 @@ using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
+
+
 {
     float horizontalInput;
     float moveSpeed = 5f;
@@ -14,13 +16,17 @@ public class PlayerMovement : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
+    
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        
     }
 
     // Update is called once per frame
     void Update()
+
     {
         // Getting player horizontal movement input
         horizontalInput = Input.GetAxis("Horizontal");
@@ -40,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate()
+    
     {
         // Apply player horizontal velocity based on the input
         rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
@@ -49,6 +56,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void FlipSprite()
+
+    
     {
         if (isFacingRight && horizontalInput > 0f || !isFacingRight && horizontalInput < 0f)
         {
@@ -60,6 +69,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
+
+    
     {
         // Update the flag when player character touches the ground
         isGrounded = true;
