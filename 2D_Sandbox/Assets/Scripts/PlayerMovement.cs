@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+
+    
     {
         // Getting player horizontal movement input
         horizontalInput = Input.GetAxis("Horizontal");
@@ -40,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate()
+
+    
     {
         // Apply player horizontal velocity based on the input
         rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
